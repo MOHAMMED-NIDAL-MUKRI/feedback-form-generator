@@ -34,8 +34,7 @@
             font-family: 'Inter', sans-serif;
             background: var(--bg-darker);
             color: var(--text-light);
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
             position: relative;
         }
 
@@ -102,27 +101,25 @@
             }
         }
 
-        /* Slides Container - Scrollable Version */
+        /* Slide Container */
         .slides-container {
             position: relative;
             z-index: 1;
-            width: 100%;
-            min-height: 100vh;
+            width: 100vw;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            padding: 2rem 0;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .slide {
-            width: 100%;
-            min-height: 100vh;
+            min-width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 4rem;
             position: relative;
-            margin-bottom: 2rem;
         }
 
         /* Glass Card Effect */
@@ -181,13 +178,50 @@
             margin-bottom: 2rem;
         }
 
-        /* Navigation - Hidden in scrollable version */
+        /* Navigation */
         .nav-controls {
-            display: none;
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            z-index: 100;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
         .slide-counter {
-            display: none;
+            position: fixed;
+            bottom: 3rem;
+            left: 3rem;
+            z-index: 100;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            border-radius: 50px;
         }
 
         /* Feature Grid */
@@ -373,6 +407,10 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .slide.active .glass-card {
+            animation: fadeInUp 0.8s ease-out;
         }
 
         /* Responsive */
