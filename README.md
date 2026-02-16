@@ -19,9 +19,7 @@ An AI-powered system that analyzes online product reviews, identifies common pai
 
 ## 🚀 Live Demo
 
-View the presentation: [https://YOUR_USERNAME.github.io/feedback-form-generator/](https://YOUR_USERNAME.github.io/feedback-form-generator/)
-
-*(Replace YOUR_USERNAME with your actual GitHub username after deployment)*
+View the presentation: [https://mohammed-nidal-mukri.github.io/feedback-form-generator/](https://mohammed-nidal-mukri.github.io/feedback-form-generator/)
 
 ## 🛠️ Tech Stack
 
